@@ -1,2 +1,3 @@
-# Projeto_e_Otimizacao_de_Algoritmos
-Projeto E Otimização De Algoritmos
+-   COD: 4646Z-04
+-   Disciplina: Projeto E Otimização De Algoritmos
+-   Professor: [Rafael Scopel Silva](http://lattes.cnpq.br/5809196001228289)
