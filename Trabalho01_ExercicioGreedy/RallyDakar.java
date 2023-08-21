@@ -3,7 +3,10 @@ package Trabalho01_ExercicioGreedy;
 import java.util.Arrays;
 
 public class RallyDakar {
-    /*
+    /**
+     * Relatório disponível em:
+     *      https://docs.google.com/document/d/1cNyjwgEqqqxgKqZ2thHzrIp35_LhAbQHMGj5v1GYHmw/edit?usp=sharing
+     * 
      * Vamos assumir um trajeto de comprimento n
      * , um "folego" (limite de distancia diário) de n
      * , com paradas espaçadas por quaisquer números
