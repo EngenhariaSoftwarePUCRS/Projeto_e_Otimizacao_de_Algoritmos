@@ -1,4 +1,4 @@
-package Trabalho01_ExercicioGreedy;
+package Exercicio01_Greedy;
 
 import java.util.Arrays;
 
