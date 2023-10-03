@@ -32,7 +32,7 @@ R: O(n log n).
 
 #### c. Defina a árvore final para o seguinte dicionário (letra:frequência): `{[a:12], [b:11], [c:8], [d:17], [e:24], [f:5]}`.
 
-[![Diagrama Online](graphviz.svg)](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0A%20%2013%20-%3E%20%22f(5)%22%2C%22c(8)%22%0A%20%2023%20-%3E%20%22b(11)%22%2C%22a(12)%22%0A%20%2030%20-%3E%2013%2C%20%22d(17)%22%0A%20%2047%20-%3E%2023%2C%20%22e(24)%22%0A%20%2077%20-%3E%2030%2C%2047%0A%7D)
+[![Diagrama Online](huffmanTree.svg)](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%20%7B%0A%20%2013%20-%3E%20%22f(5)%22%2C%22c(8)%22%0A%20%2023%20-%3E%20%22b(11)%22%2C%22a(12)%22%0A%20%2030%20-%3E%2013%2C%20%22d(17)%22%0A%20%2047%20-%3E%2023%2C%20%22e(24)%22%0A%20%2077%20-%3E%2030%2C%2047%0A%7D)
 
 ```dot
 digraph G {
