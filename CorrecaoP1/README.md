@@ -11,14 +11,60 @@ R: A abordagem de divisão e conquista consiste em dividir um problema em subpro
 
 ## 3. (2 pontos) Resolva as seguintes recorrências utilizando o método mestre: 
  
-#### a. $T(n) = 4T(\frac{n}{16}) + 1$
+### a. $T(n) = 4T(\frac{n}{16}) + 1$
 
-#### b. $T(n) = 16T(\frac{n}{32}) + n^\frac{1}{3}$
 
-#### c. $T(n) = 4T(\frac{n}{16}) + n$
+$a = 4$
 
-#### d. $T(n) = 9T(\frac{n}{5}) + n^3$
+$b = 16$
 
+$f(n) = 1$
+
+$log_{b}{a} = log_{16}{4} = \frac{1}{2}$
+
+Como a função $f(n)$ possui complexidade $O(1)$ e a função c $\pm$ $\epsilon$, para $\epsilon = -\frac{1}{2}$ tem complexidade $O(n^{\frac{1}{2} - \frac{1}{2}}) = O(n^{0}) = O(1)$ também, então $T(n) = \Theta(n^{\frac{1}{2}})$, conforme o caso 2 do método mestre.
+
+
+### b. $T(n) = 16T(\frac{n}{32}) + n^\frac{1}{3}$
+
+
+$a = 16$
+
+$b = 32$
+
+$f(n) = n^\frac{1}{3}$
+
+$log_{b}{a} = log_{32}{16} = \frac{4}{5}$
+
+Como a função $f(n)$ possui complexidade $O(n)$ e a função c $\pm$ $\epsilon$, para $\epsilon = \frac{1}{5}$ tem complexidade $O(n^{\frac{4}{5} + \frac{1}{5}}) = O(n)$, então $T(n) = \Theta(n^{\frac{4}{5}})$, conforme o caso 1 do método mestre.
+
+
+### c. $T(n) = 4T(\frac{n}{16}) + n$
+
+
+$a = 4$
+
+$b = 16$
+
+$f(n) = n$
+
+$log_{b}{a} = log_{16}{4} = \frac{1}{2}$
+
+Como a função $f(n)$ possui complexidade $O(n)$ e a função c $\pm$ $\epsilon$, para $\epsilon = -\frac{1}{2}$ tem complexidade $O(n^{\frac{1}{2} - \frac{1}{2}}) = O(n^{0}) = O(1)$, então $T(n) = \Theta(n)$, conforme o caso 3 do método mestre.
+
+
+### d. $T(n) = 9T(\frac{n}{5}) + n^3$
+
+
+$a = 9$
+
+$b = 5$
+
+$f(n) = n^3$
+
+$log_{b}{a} = log_{5}{9} = \frac{log9}{log5} \approx 1.3652$
+
+Como a função $f(n)$ possui complexidade $O(n^3)$ e a função c $\pm$ $\epsilon$, para $\epsilon = -0.3652$ tem complexidade $O(n^{1.3652 - 0.3652}) = O(n^{1}) = O(n)$, então $T(n) = \Theta(n^3)$, conforme o caso 3 do método mestre.
 
 ## 4. (2 pontos) Com base no algoritmo de Huffman codes responda as questões abaixo:
 
@@ -47,7 +93,7 @@ digraph G {
 #### d. Descreva os códigos definidos pela árvore do item c.
 
 | Letra | Código |
-|-------|--------|
+|------:|:-------|
 | a     | 101    |
 | b     | 100    |
 | c     | 001    |
@@ -77,13 +123,13 @@ R: Memoização é uma técnica de programação dinâmica que consiste em armaz
 
 #### c. Calcule $OPT(8)$.
 
-| j | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-|---|---|---|---|---|---|---|---|---|
-| $v_j$ | 4 | 3 | 5 | 2 | 8 | 6 | 1 | 7 |
-| $p_j$ | 0 | 0 | 0 | 0 | 2 | 3 | 1 | 4 |
-| $OPT(p(j))$ | 0 | 0 | 0 | 0 | 4 | 5 | 4 | 5 |
-| $OPT(j - 1)$ | 0 | 4 | 4 | 5 | 5 | 12 | 12 | 12 |
-| $OPT(j)$ | 4 | 4 | 5 | 5 | 12 | 12 | 12 | 12 |
+| j             | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  |
+| ---:          |---:|---:|---:|---:|---:|---:|---:|---:|
+| $v_j$         | 4  | 3  | 5  | 2  | 8  | 6  | 1  | 7  |
+| $p(j)$         | 0  | 0  | 0  | 0  | 2  | 3  | 1  | 4  |
+| $OPT(p(j))$   | 0  | 0  | 0  | 0  | 4  | 5  | 4  | 5  |
+| $OPT(j - 1)$  | 0  | 4  | 4  | 5  | 5  | 12 | 12 | 12 |
+| $OPT(j)$      | 4  | 4  | 5  | 5  | 12 | 12 | 12 | 12 |
 
 $OPT(0) = 0$
 
