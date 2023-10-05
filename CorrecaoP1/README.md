@@ -22,7 +22,7 @@ $f(n) = 1$
 
 $log_{b}{a} = log_{16}{4} = \frac{1}{2}$
 
-Como a função $f(n)$ possui complexidade $O(1)$ e a função c $\pm$ $\epsilon$, para $\epsilon = -\frac{1}{2}$ tem complexidade $O(n^{\frac{1}{2} - \frac{1}{2}}) = O(n^{0}) = O(1)$ também, então $T(n) = \Theta(n^{\frac{1}{2}})$, conforme o caso 2 do método mestre.
+Como a função $f(n)$ possui complexidade $O(1)$ e a função $n^{log_b{a} \pm \epsilon}$, para $\epsilon = -\frac{1}{2}$ tem complexidade $O(n^{\frac{1}{2} - \frac{1}{2}}) = O(n^{0}) = O(1)$ também, então $\boxed{T(n) = \Theta(n^{\frac{1}{2}})}$, conforme o caso 1 do método mestre.
 
 
 ### b. $T(n) = 16T(\frac{n}{32}) + n^\frac{1}{3}$
@@ -36,7 +36,9 @@ $f(n) = n^\frac{1}{3}$
 
 $log_{b}{a} = log_{32}{16} = \frac{4}{5}$
 
-Como a função $f(n)$ possui complexidade $O(n)$ e a função c $\pm$ $\epsilon$, para $\epsilon = \frac{1}{5}$ tem complexidade $O(n^{\frac{4}{5} + \frac{1}{5}}) = O(n)$, então $T(n) = \Theta(n^{\frac{4}{5}})$, conforme o caso 1 do método mestre.
+$af(\frac{n}{b}) = 16(\frac{n}{32})^\frac{1}{3} = 2n^\frac{1}{3}$
+
+Como a função $f(n)$ possui complexidade $O(n)$ e a função $n^{log_b{a} \pm \epsilon}$, para $\epsilon = -\frac{7}{15}$ tem complexidade $O(n^{\frac{4}{5} - \frac{7}{15}}) = O(n^{\frac{12}{15} - \frac{7}{15}}) = O(n^\frac{1}{3})$ também, então $\boxed{T(n) = \Theta(n^\frac{4}{5})}$, conforme o caso 1 do método mestre.
 
 
 ### c. $T(n) = 4T(\frac{n}{16}) + n$
@@ -50,7 +52,7 @@ $f(n) = n$
 
 $log_{b}{a} = log_{16}{4} = \frac{1}{2}$
 
-Como a função $f(n)$ possui complexidade $O(n)$ e a função c $\pm$ $\epsilon$, para $\epsilon = -\frac{1}{2}$ tem complexidade $O(n^{\frac{1}{2} - \frac{1}{2}}) = O(n^{0}) = O(1)$, então $T(n) = \Theta(n)$, conforme o caso 3 do método mestre.
+Como a função $f(n)$ possui complexidade $O(n)$ e a função $n^{log_b{a}\pm \epsilon}$, para $\epsilon = +\frac{1}{2}$ tem complexidade $O(n^{\frac{1}{2} + \frac{1}{2}}) = O(n^{1}) = O(n)$, então $T(n)$ pode ser $\Omega(n)$. Visto que esta igualdade está dentro do primeiro passo previsto do passo 3 do método mestre, então vamos calcular a segunda parte que diz que $af(\frac{n}{b}) \leq cf(n)$, para $c < 1 = 4f(\frac{n}{16}) \le \frac{1}{2}f(n) = \frac{n}{4} \le \frac{n}{2}$, o que é verdade, então $\boxed{T(n) = \Omega(n)}$, conforme o caso 3 do método mestre.
 
 
 ### d. $T(n) = 9T(\frac{n}{5}) + n^3$
@@ -64,13 +66,13 @@ $f(n) = n^3$
 
 $log_{b}{a} = log_{5}{9} = \frac{log9}{log5} \approx 1.3652$
 
-Como a função $f(n)$ possui complexidade $O(n^3)$ e a função c $\pm$ $\epsilon$, para $\epsilon = -0.3652$ tem complexidade $O(n^{1.3652 - 0.3652}) = O(n^{1}) = O(n)$, então $T(n) = \Theta(n^3)$, conforme o caso 3 do método mestre.
+Como a função $f(n)$ possui complexidade $O(n^3)$ e a função $n^{log_b{a} \pm \epsilon}$, para $\epsilon \approx (3-1.3652) \approx 1.6348$ tem complexidade $O(n^{1.3652 + 1.6348}) = O(n^{3})$, então $T(n)$ pode ser $\Theta(n^3)$. Visto que esta igualdade está dentro do primeiro passo previsto do passo 3 do método mestre, então vamos calcular a segunda parte que diz que $af(\frac{n}{b}) \leq cf(n)$, para $c < 1 = 9f(\frac{n}{5}) \le \frac{1}{2}f(n) = 9\frac{n^{3}}{5^3} \le \frac{n^{3}}{2} = 9\frac{n^{3}}{125} \le \frac{n^{3}}{2}$, o que é falso, então $\boxed{T(n) \neq \Theta(n^3)}$ conforme o caso 3 do método mestre. Porém, isso leva a concluir que $\boxed{T(n) = O(n^3)}$ caso a constante c seja um valor entre $1$ e $\frac{9}{125}$.
 
 ## 4. (2 pontos) Com base no algoritmo de Huffman codes responda as questões abaixo:
 
 #### a. O Huffman codes utiliza que abordagem algorítmica para compressão de dados?
 
-R: Utiliza uma técnica de agrupar símbolos por frequência, o que permite que símbolos mais frequentes sejam representados por códigos menores.
+R: Utiliza uma técnica greedy de agrupar símbolos por frequência, o que permite que símbolos mais frequentes sejam representados por códigos menores.
 
 #### b. Qual o tempo de execução do algoritmo? 
 
@@ -119,7 +121,7 @@ Responda as seguintes perguntas:
 
 R: Memoização é uma técnica de programação dinâmica que consiste em armazenar os resultados de subproblemas para evitar recálculos. Ex: vamos assumir que $n^{100}$ é uma operação custosa, então, se eu já calculei $n^{100}$ para $n = 5$, não preciso recalcular nada, posso simplesmente armazenar o resultado e reutilizar da próxima vez que fizer uma chamada para $n = 5$.
 
-#### b. Calcule $p(j)$ para todas as requisições.
+#### b. Calcule $p(j)$ para todas as requisições. (Tabela da questão c.)
 
 #### c. Calcule $OPT(8)$.
 
